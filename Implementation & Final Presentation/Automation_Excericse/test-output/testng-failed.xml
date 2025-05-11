@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="tests.LoginTests_happyScenarioAndNegativeScenarioWithDDTAndExcelFile">
+      <class name="tests.TestCase21_Addreviewonproduct">
         <methods>
-          <include name="testAllLoginScenario" invocation-numbers="0 1"/>
+          <include name="TestCase21"/>
           <include name="closeBrowser"/>
           <include name="openBrowser"/>
         </methods>
-      </class> <!-- tests.LoginTests_happyScenarioAndNegativeScenarioWithDDTAndExcelFile -->
+      </class> <!-- tests.TestCase21_Addreviewonproduct -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -1,7 +1,6 @@
 package tests;
 
 import org.testng.Assert;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import pages.HomePage;
@@ -10,9 +9,6 @@ import pages.LoginPage;
 public class Login_negativeScenario extends TestBase {
 	HomePage homeObject = new HomePage(driver);
 	LoginPage loginObject = new LoginPage(driver);
-	
-	
-	
     @Test (priority = 2)
     public void inCorrentUsernameAndPassword() throws InterruptedException {
     	Thread.sleep(2000);

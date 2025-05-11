@@ -48,7 +48,7 @@ public class ContactUsPageWithRobotWay extends PageBase {
 		
 		////// upload file
 		String filePath = System.getProperty("user.dir")+"\\src\\main\\java\\images\\messi.jpg.jpg";
-		System.out.println(filePath);
+		
 //		uploadFileBtn.click(); /مينفعش
 		Actions builder = new Actions(driver);
 		builder.click(uploadFileBtn).build().perform();

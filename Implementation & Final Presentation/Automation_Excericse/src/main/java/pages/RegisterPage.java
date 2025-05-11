@@ -2,6 +2,8 @@ package pages;
 
 import java.util.List;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -94,8 +96,11 @@ public class RegisterPage extends PageBase {
 	@FindBy(css="#form > div > div > div > h2 > b")
 	public WebElement deleteMessage;
 	
+	
 	@FindBy(css="#form > div > div > div:nth-child(3) > div > form > p")
 	public WebElement failedMessage;
+	
+	
 	
 	
 	public void userCanRegister(String name,String email) {
@@ -110,8 +115,6 @@ public class RegisterPage extends PageBase {
 			String firstName,String lastName,String company,String address,
 			String Country,String state,String city,String zipCode,
 			String mobileNumber
-			
-			
 			) {
 		
 		maleGenderBtn.click();
@@ -127,7 +130,8 @@ public class RegisterPage extends PageBase {
 		makeMonthsList.selectByValue(month);
 		makeYearsList.selectByVisibleText(year);
 		
-		newsLetterBtn.click();
+//		newsLetterBtn.click();
+		 clickNewsletterCheckbox();
 		specialOfferBtn.click();
 		
 		firstNameTxt.sendKeys(firstName);
@@ -153,4 +157,19 @@ public class RegisterPage extends PageBase {
 	public void deleteAccount() {
 		navBarLinks.get(4).click();
 	}
+	public boolean isAccountCreatedVisible() {
+        return successMesssage.isDisplayed();
+	}
+	 public boolean isLoggedInVisible() {
+         return loggedInMessage.isDisplayed();
+     }
+
+	 public boolean isAccountDeletedVisible() {
+		 return deleteMessage.isDisplayed();
+	 }
+	 public void clickNewsletterCheckbox() {
+		    WebElement newsletterCheckbox = driver.findElement(By.id("newsletter"));
+		    ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true);", newsletterCheckbox);
+		    newsletterCheckbox.click();
+		}
 }

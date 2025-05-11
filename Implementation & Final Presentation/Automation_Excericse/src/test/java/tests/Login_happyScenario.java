@@ -13,7 +13,6 @@ public class Login_happyScenario extends TestBase {
     public void correntUsernameAndPassword() throws InterruptedException {
     	Thread.sleep(2000);
     	homeObject.openLoginPage();
-    	
     	Thread.sleep(2000);
     	
     	Assert.assertEquals("Login to your account", loginObject.loginMessage.getText());
